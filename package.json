@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests/** --app \"http-server ./sandbox -p 3001 -s\""
+    "test": "testcafe firefox ./tests/** "
   },
   "repository": {
     "type": "git",

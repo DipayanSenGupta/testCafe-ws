@@ -1,0 +1,19 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DipayanSenGupta/testCafe-ws.git"
+  },
+  "author": "dipayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DipayanSenGupta/testCafe-ws/issues"
+  },
+  "homepage": "https://github.com/DipayanSenGupta/testCafe-ws#readme"
+}

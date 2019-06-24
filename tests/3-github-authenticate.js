@@ -1,56 +1,37 @@
-// import { HomePage } from './page-object';
-// import { dipayan } from './roles'
+import { HomePage,TwoStepAuthPage } from './page-object';
+import { dipayan } from './role'
+import { Selector } from 'testcafe';
+
+fixture `GitHub Tests`
+    .page`https://github.com`;
+
+//const page = new HomePage();
+const page = new TwoStepAuthPage();
+
+test('User name password entered', async t => {
+await t.useRole(dipayan)
+await t.expect(await Selector('h1').innerText).eql('Two-factor authentication');
+
+});
+
 
 // fixture `GitHub Tests`
-//     .page `https://github.com`;
+//     .page `https://github.com/sessions/two-factor`;
 
-// const page = new HomePage();
+// const page_2 = new TwoStepAuthPage();
 
-// test('User name is displayed correctly', async t => {
+// test('two-factor-clicker', async t => {
 //     await t
-//         .useRole(dipayan)
-//         .click(page.avatar)
-//         .expect(page.dropdownHeader.textContent).contains('Signed in as dipayan')
-
+//         .click(page.recovery)
 // });
 
-import { Selector } from 'testcafe';
-import { LoginPage } from './page-object';
-import { HomePage } from './page-object';
-import { Role } from 'testcafe';
+// fixture `GitHub Tests`
+    // .page `https://github.com/sessions/two-factor/recovery`;
 
-fixture `Github login`    
-.page `https://github.com/login`;
+// const page_3 = new TwoStepAuthPage();
 
-const page = new LoginPage();
-const loginPageUrl = 'https://github.com/login';
-
-test('start github page', async t => {});
-
-test('fill-up & click sign in button', async t => {
-	 await t
-	.typeText(page.login, 'dip.himu@gmail.com')
-	.typeText(page.password, '7D<U>K/`Qrt_&-Rx')
-	.click(page.signIn);
-});
-
-// const dipayan = Role(loginPageUrl, async t => {
-// 		 await t
-//   .typeText(page.login, 'dip.himu@gmail.com')
-//   .typeText(page.password, '7D<U>K/`Qrt_&-Rx')
-//   .click(page.signIn);
-
+// test('recovery-code-added', async t => {
+//     await t
+//         .typeText(page.recovery_code, '467ac-5f577')
+//         .click(page.verify);
 // });
-
-// test('authentication-completed',async t => {
-// 	await t
-// 	.click(page.)
-// });
-
-test('User name is displayed correctly', async t => {
-    await t
-        .useRole(dipayan)
-        .click(page.avatar)
-        .expect(page.dropdownHeader.textContent).contains('Signed in as dipayan')
-
-});

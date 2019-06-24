@@ -14,3 +14,12 @@ export class HomePage {
         this.dropdownHeader = Selector('.dropdown-header');
     }
 }
+
+export class TwoStepAuthPage {
+    constructor () {
+        this.recovery       = Selector('.two-factor-help').withText('Enter a two-factor recovery code');
+        this.recovery_code    = Selector('#recovery_code');
+        this.verify = Selector('.btn');
+
+    }
+}

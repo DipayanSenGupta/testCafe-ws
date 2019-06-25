@@ -11,22 +11,21 @@ const page = new TwoStepAuthPage();
 test('User name password entered', async t => {
 await t.useRole(dipayan)
 		.wait(50000)
-		// .expect(await Selector('h1').innerText).eql('Two-factor authentication')
-		// .wait(50000);
+		.expect(await Selector('h1').innerText).eql('Two-factor authentication')
+		.wait(50000);
 
 });
 
 
-fixture `GitHub Tests`
-    .page `https://github.com/sessions/two-factor`;
+// fixture `GitHub Tests`
+//     .page `https://github.com/sessions/two-factor`;
 
-const page_2 = new TwoStepAuthPage();
+// const page_2 = new TwoStepAuthPage();
 
-test('two-factor-clicker', async t => {
-    await t
-    		// .wait(50000)
-        .click(page.recovery)
-});
+// test('two-factor-clicker', async t => {
+//     await t
+//         .click(page.recovery)
+// });
 
 // fixture `GitHub Tests`
     // .page `https://github.com/sessions/two-factor/recovery`;

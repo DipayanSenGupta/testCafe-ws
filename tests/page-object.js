@@ -9,17 +9,42 @@ export class LoginPage {
 }
 
 export class HomePage {
-    constructor () {
-        this.avatar         = Selector('.avatar');
-        this.dropdownHeader = Selector('.dropdown-header');
-    }
+	constructor () {
+		this.octiconPlus = Selector('.octicon-plus');
+		this.avatar = Selector('div').child('details').child('summary').child('img');
+		this.dropdownItem = Selector('.dropdown-item');
+		this.dropdownItemSuccess = Selector('div').child('details').child('details-menu').child('div').child('a');
+		// this.dropdownItemRepository = Selector('div').child('details').child('details-menu').child('.dropdown-item');
+		this.dropdownItemRepository = Selector('header').child('div').nth(7).child('details').child('details-menu').child('a').nth(1);
+		this.newRepo = Selector('a').withText('New repository');
+
+	}
 }
 
-export class TwoStepAuthPage {
-    constructor () {
-        this.recovery       = Selector('.two-factor-help').withText('Enter a two-factor recovery code');
-        this.recovery_code    = Selector('#recovery_code');
-        this.verify = Selector('.btn');
+export class NewRepo {
+	constructor () {
+			this.repositoryName    = Selector('#repository_name');
+        this.repositorydescription = Selector('#repository_description');
+        this.submit   = Selector('.first-in-line');
 
-    }
+	}
+}
+
+export class Repositories {
+	constructor () {
+			this.repositoryToEdit    = Selector('#user-repositories-list').child('ul').child('li').nth(0).child('.d-inline-block').find('a');
+	}
+}
+
+export class EditRepoPage{
+		constructor () {
+			this.settings   = Selector('nav').child('a').nth(7);
+	}
+}
+
+export class Settings{
+		constructor () {
+			this.rename   = Selector('#rename-field');
+			this.delete = Selector('ul').child('li').nth(4).child('btn');
+	}
 }

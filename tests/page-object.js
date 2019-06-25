@@ -14,7 +14,6 @@ export class HomePage {
 		this.avatar = Selector('div').child('details').child('summary').child('img');
 		this.dropdownItem = Selector('.dropdown-item');
 		this.dropdownItemSuccess = Selector('div').child('details').child('details-menu').child('div').child('a');
-		// this.dropdownItemRepository = Selector('div').child('details').child('details-menu').child('.dropdown-item');
 		this.dropdownItemRepository = Selector('header').child('div').nth(7).child('details').child('details-menu').child('a').nth(1);
 		this.newRepo = Selector('a').withText('New repository');
 
@@ -45,6 +44,6 @@ export class EditRepoPage{
 export class Settings{
 		constructor () {
 			this.rename   = Selector('#rename-field');
-			this.delete = Selector('ul').child('li').nth(4).child('btn');
+			this.delete = Selector('li').child('details').child('summary');
 	}
 }

@@ -44,6 +44,11 @@ export class EditRepoPage{
 export class Settings{
 		constructor () {
 			this.rename   = Selector('#rename-field');
-			this.delete = Selector('li').child('details').child('summary');
+			this.rename_button = Selector('button').withText('Rename');
+			this.delete = Selector('.Box--danger').find('li').nth(-1).child('details').child('summary');
+			const repo_name_0 = Selector('.Box--danger').find('li').nth(-1).child('details').child('details-dialog').find('p').find('strong').innerText;
+			this.input_field = Selector('.Box--danger').find('li').nth(-1).child('details').child('details-dialog').find('form').child('p').child('.input-block');
+			this.button = Selector('.Box--danger').find('li').nth(-1).child('details').child('details-dialog').find('form').find('button');
+			this.repo_name_1 = String(repo_name_0).replace('himu-dip/','');
 	}
 }
